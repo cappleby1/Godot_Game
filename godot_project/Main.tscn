@@ -5,14 +5,14 @@
 [ext_resource type="Texture2D" uid="uid://0vf6uxb6og0c" path="res://sprites/platform1.png" id="3_i61r3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m8hfe"]
-radius = 5.8309
-height = 15.7538
+radius = 2.10295
+height = 7.37838
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rsyrx"]
-size = Vector2(409, 122)
+size = Vector2(219, 67)
 
 [node name="Node2D" type="Node2D"]
-position = Vector2(41, 530)
+position = Vector2(30, 226)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(121, -128)
@@ -20,36 +20,36 @@ scale = Vector2(10.4615, 10.0293)
 script = ExtResource("2_awx6g")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(-3.3217, -4.59566)
-scale = Vector2(0.805149, 0.805149)
+position = Vector2(-6.42833, -0.0552049)
+scale = Vector2(0.327206, 0.327206)
 texture = ExtResource("1_y2p8y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(-3.25001, -4.58656)
+position = Vector2(-6.21326, -9.53674e-07)
 shape = SubResource("CapsuleShape2D_m8hfe")
 
 [node name="Platforms" type="Node" parent="."]
 
 [node name="Platform1" type="RigidBody2D" parent="Platforms"]
-position = Vector2(41, 530)
+position = Vector2(30, 226)
 gravity_scale = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Platforms/Platform1"]
-position = Vector2(194, -27.625)
-scale = Vector2(12.8125, 13.9167)
+position = Vector2(99.0699, -56.625)
+scale = Vector2(6.87937, 7.47222)
 texture = ExtResource("3_i61r3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform1"]
-position = Vector2(194.5, -29)
+position = Vector2(99.5, -56.5)
 shape = SubResource("RectangleShape2D_rsyrx")
 
 [node name="Platform2" type="RigidBody2D" parent="Platforms"]
-position = Vector2(625, 525)
+position = Vector2(257, 200)
 gravity_scale = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Platforms/Platform2"]
-position = Vector2(194, -27.625)
-scale = Vector2(12.8125, 13.9167)
+position = Vector2(192.772, -28)
+scale = Vector2(6.95609, 7.55555)
 texture = ExtResource("3_i61r3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform2"]
