@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dn5af27xuee1y"]
+
+[ext_resource type="Texture2D" uid="uid://lko75usnhcx" path="res://sprites/knight1.png" id="1_y2p8y"]
+[ext_resource type="Script" path="res://scripts/PlayerMovement.gd" id="2_awx6g"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m8hfe"]
+radius = 5.8309
+height = 15.7538
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(41, 530)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(241, -349)
+scale = Vector2(10.4615, 10.0293)
+script = ExtResource("2_awx6g")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(-3.3217, -4.59566)
+scale = Vector2(0.805149, 0.805149)
+texture = ExtResource("1_y2p8y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-3.25001, -4.58656)
+shape = SubResource("CapsuleShape2D_m8hfe")
