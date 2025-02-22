@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsyl33cueqtag"]
+
+[ext_resource type="Script" path="res://scripts/OptionsMenu.gd" id="1_3rbgh"]
+[ext_resource type="FontFile" uid="uid://mly3y7xk1pmq" path="res://assets/font/PixelOperator8-Bold.ttf" id="1_43ts4"]
+[ext_resource type="FontFile" uid="uid://bu47rub05c5fq" path="res://assets/font/PixelOperator8.ttf" id="2_5rd4r"]
+
+[node name="OptionsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3rbgh")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0482193, 0.0720771, 0.135621, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="TitleBox" type="VBoxContainer" parent="Background/MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Background/MarginContainer/TitleBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_43ts4")
+theme_override_font_sizes/font_size = 90
+text = "Options Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonsBox" type="VBoxContainer" parent="Background/MarginContainer/TitleBox"]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="BackButton" type="Button" parent="Background/MarginContainer/TitleBox/ButtonsBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_5rd4r")
+theme_override_font_sizes/font_size = 40
+text = "Back"
+
+[connection signal="pressed" from="Background/MarginContainer/TitleBox/ButtonsBox/BackButton" to="." method="_on_back_button_pressed"]
