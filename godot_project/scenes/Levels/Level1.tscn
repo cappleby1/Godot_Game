@@ -1,16 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dn5af27xuee1y"]
+[gd_scene load_steps=6 format=3 uid="uid://dn5af27xuee1y"]
 
-[ext_resource type="Script" path="res://scripts/CharacterController.gd" id="1_0vtri"]
-[ext_resource type="Texture2D" uid="uid://lko75usnhcx" path="res://assets/sprites/knight1.png" id="1_y2p8y"]
+[ext_resource type="PackedScene" uid="uid://ci7b0064i7xt6" path="res://scenes/Player/Player.tscn" id="2_uojnk"]
 [ext_resource type="Texture2D" uid="uid://0vf6uxb6og0c" path="res://assets/sprites/platform1.png" id="3_i61r3"]
-[ext_resource type="AudioStream" uid="uid://bfhq5nq3gyjlu" path="res://assets/sounds/jump.wav" id="3_wd8hj"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m8hfe"]
-radius = 2.10295
-height = 7.37838
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rsyrx"]
-size = Vector2(219, 67)
+size = Vector2(41.5, 14.5)
 
 [sub_resource type="GDScript" id="GDScript_ssw86"]
 script/source = "extends Area2D
@@ -24,25 +18,7 @@ func _on_area_entered(area: Area2D) -> void:
 size = Vector2(1603.5, 240.5)
 
 [node name="Level1" type="Node2D"]
-position = Vector2(30, 226)
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(121, -128)
-scale = Vector2(10.4615, 10.0293)
-script = ExtResource("1_0vtri")
-
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(-6.42833, -0.0552049)
-scale = Vector2(0.327206, 0.327206)
-texture = ExtResource("1_y2p8y")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(-6.21326, -9.53674e-07)
-shape = SubResource("CapsuleShape2D_m8hfe")
-
-[node name="JumpSound" type="AudioStreamPlayer2D" parent="CharacterBody2D"]
-stream = ExtResource("3_wd8hj")
-volume_db = -16.343
+position = Vector2(27, 264)
 
 [node name="Platforms" type="Node" parent="."]
 
@@ -51,38 +27,12 @@ position = Vector2(30, 226)
 gravity_scale = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Platforms/Platform1"]
-position = Vector2(99.0699, -56.625)
-scale = Vector2(6.87937, 7.47222)
+position = Vector2(20, -98)
+scale = Vector2(1.31469, 1.75694)
 texture = ExtResource("3_i61r3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform1"]
-position = Vector2(99.5, -56.5)
-shape = SubResource("RectangleShape2D_rsyrx")
-
-[node name="Platform2" type="RigidBody2D" parent="Platforms"]
-position = Vector2(426, 200)
-gravity_scale = 0.0
-
-[node name="Sprite2D" type="Sprite2D" parent="Platforms/Platform2"]
-position = Vector2(192.772, -28)
-scale = Vector2(6.95609, 7.55555)
-texture = ExtResource("3_i61r3")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform2"]
-position = Vector2(194.5, -29)
-shape = SubResource("RectangleShape2D_rsyrx")
-
-[node name="Platform3" type="RigidBody2D" parent="Platforms"]
-position = Vector2(102, 494)
-gravity_scale = 0.0
-
-[node name="Sprite2D" type="Sprite2D" parent="Platforms/Platform3"]
-position = Vector2(192.772, -28)
-scale = Vector2(6.95609, 7.55555)
-texture = ExtResource("3_i61r3")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform3"]
-position = Vector2(194.5, -29)
+position = Vector2(19.25, -97.25)
 shape = SubResource("RectangleShape2D_rsyrx")
 
 [node name="Platform4" type="RigidBody2D" parent="Platforms"]
@@ -106,4 +56,9 @@ script = SubResource("GDScript_ssw86")
 position = Vector2(772.25, 41.75)
 shape = SubResource("RectangleShape2D_jhc0f")
 
-[connection signal="body_shape_entered" from="KillZone" to="CharacterBody2D" method="_on_kill_zone_body_shape_entered"]
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(27, -144)
+zoom = Vector2(4, 4)
+
+[node name="Player" parent="." instance=ExtResource("2_uojnk")]
+position = Vector2(26, -156)
