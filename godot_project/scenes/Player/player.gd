@@ -4,6 +4,7 @@ const SPEED = 100.0
 const JUMP_VELOCITY = -200.0
 
 @onready var jump_sound = $JumpSound
+@onready var animated_sprite = $AnimatedSprite2D
 
 
 func _physics_process(delta: float) -> void:
@@ -23,5 +24,11 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
+	if direction > 0:
+		animated_sprite.flip_h = false
+	else:
+		animated_sprite.flip_h = true
+		
 
 	move_and_slide()
