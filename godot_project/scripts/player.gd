@@ -48,4 +48,7 @@ func update_score_display():
 	score_label.text = "Coins Left: " + str(player_score)
 	
 func on_level_complete():
+	call_deferred("move_scene")
+
+func move_scene():
 	get_tree().change_scene_to_file("res://scenes/WinScreen.tscn")
