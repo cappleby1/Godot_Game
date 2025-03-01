@@ -164,15 +164,16 @@ script = SubResource("GDScript_ssw86")
 position = Vector2(772.25, 41.75)
 shape = SubResource("RectangleShape2D_jhc0f")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(80, -8)
-zoom = Vector2(4, 4)
-
 [node name="Player" parent="." instance=ExtResource("2_uojnk")]
 z_index = 1
 position = Vector2(-2, -22)
 scale = Vector2(1.29826, 1.29826)
 collision_mask = 2
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-4.62158, -2.31079)
+scale = Vector2(0.770263, 0.770263)
+zoom = Vector2(4, 4)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_3o3oa")
@@ -193,6 +194,7 @@ collision_enabled = false
 [node name="Decoration" type="TileMapLayer" parent="TileMap"]
 z_index = -1
 use_parent_material = true
-tile_map_data = PackedByteArray("AAAAAPz/AAAAAAMAAAAAAP3/AAAAAAQAAAAAAP7/AAAAAAUAAAAGAP7/AAABAAYAAAA=")
+position = Vector2(0, 1)
+tile_map_data = PackedByteArray("AAAAAPz/AAAAAAMAAAAAAP3/AAAAAAQAAAAAAP7/AAAAAAUAAAAGAP7/AAABAAYAAAACAAEAAAAEAAkAAAADAAEAAAAEAAkAAAAEAAEAAAAEAAkAAAACAAIAAAAEAAoAAAACAAMAAAAEAAoAAAACAAQAAAAEAAoAAAADAAQAAAAEAAoAAAAEAAQAAAAEAAoAAAAEAAMAAAAEAAoAAAAEAAIAAAAEAAoAAAADAAIAAAAEAAoAAAADAAMAAAAEAAoAAAA=")
 tile_set = SubResource("TileSet_3o3oa")
 collision_enabled = false
