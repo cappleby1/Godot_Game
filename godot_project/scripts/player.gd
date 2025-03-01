@@ -1,11 +1,16 @@
 extends CharacterBody2D
 
 const SPEED = 100.0
-const JUMP_VELOCITY = -200.0
+const JUMP_VELOCITY = -250.0
+
+var player_score = 5
 
 @onready var jump_sound = $JumpSound
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var score_label = $Score
 
+func _ready():
+	score_label.text = "Coins Left: " + str(player_score)
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -32,3 +37,15 @@ func _physics_process(delta: float) -> void:
 		
 
 	move_and_slide()
+	
+func increase_score():
+	player_score -= 1
+	update_score_display()
+	if player_score <= 0:
+		on_level_complete()
+
+func update_score_display():
+	score_label.text = "Coins Left: " + str(player_score)
+	
+func on_level_complete():
+	get_tree().change_scene_to_file("res://scenes/WinScreen.tscn")

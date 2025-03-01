@@ -1,0 +1,73 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgql0q7dbwr41"]
+
+[ext_resource type="Script" path="res://scripts/win_screen.gd" id="1_wih3c"]
+[ext_resource type="FontFile" uid="uid://mly3y7xk1pmq" path="res://assets/font/PixelOperator8-Bold.ttf" id="2_u3ssc"]
+[ext_resource type="FontFile" uid="uid://bu47rub05c5fq" path="res://assets/font/PixelOperator8.ttf" id="3_c2lxo"]
+
+[node name="WinScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -12.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wih3c")
+metadata/_edit_use_anchors_ = true
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0482193, 0.0720771, 0.135621, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="TitleBox" type="VBoxContainer" parent="Background/MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Background/MarginContainer/TitleBox"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_u3ssc")
+theme_override_font_sizes/font_size = 90
+text = "Level Complete!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ButtonsBox" type="VBoxContainer" parent="Background/MarginContainer/TitleBox"]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="NextLevelButton" type="Button" parent="Background/MarginContainer/TitleBox/ButtonsBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("3_c2lxo")
+theme_override_font_sizes/font_size = 40
+text = "Next Level"
+
+[node name="MenuButton" type="Button" parent="Background/MarginContainer/TitleBox/ButtonsBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("3_c2lxo")
+theme_override_font_sizes/font_size = 40
+text = "Exit to Menu"
+
+[connection signal="pressed" from="Background/MarginContainer/TitleBox/ButtonsBox/MenuButton" to="." method="_on_menu_button_pressed"]

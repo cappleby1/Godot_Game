@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://780ivaw1wpuj"]
+[gd_scene load_steps=4 format=3 uid="uid://d38ruxj7etm5l"]
 
-[ext_resource type="Script" path="res://scenes/UI/MainMenu.gd" id="1_flxot"]
-[ext_resource type="FontFile" uid="uid://mly3y7xk1pmq" path="res://assets/font/PixelOperator8-Bold.ttf" id="1_lbb17"]
-[ext_resource type="FontFile" uid="uid://bu47rub05c5fq" path="res://assets/font/PixelOperator8.ttf" id="2_ljeab"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_7oscc"]
+[ext_resource type="FontFile" uid="uid://mly3y7xk1pmq" path="res://assets/font/PixelOperator8-Bold.ttf" id="2_ydx0k"]
+[ext_resource type="FontFile" uid="uid://bu47rub05c5fq" path="res://assets/font/PixelOperator8.ttf" id="3_wqsyj"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -13,7 +13,7 @@ offset_right = -12.0
 offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_flxot")
+script = ExtResource("1_7oscc")
 metadata/_edit_use_anchors_ = true
 
 [node name="Background" type="ColorRect" parent="."]
@@ -42,7 +42,7 @@ layout_mode = 2
 
 [node name="Title" type="Label" parent="Background/MarginContainer/TitleBox"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_lbb17")
+theme_override_fonts/font = ExtResource("2_ydx0k")
 theme_override_font_sizes/font_size = 90
 text = "Godot Project"
 horizontal_alignment = 1
@@ -56,7 +56,7 @@ size_flags_vertical = 10
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_fonts/font = ExtResource("2_ljeab")
+theme_override_fonts/font = ExtResource("3_wqsyj")
 theme_override_font_sizes/font_size = 40
 text = "Start Game"
 
@@ -64,7 +64,7 @@ text = "Start Game"
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_fonts/font = ExtResource("2_ljeab")
+theme_override_fonts/font = ExtResource("3_wqsyj")
 theme_override_font_sizes/font_size = 40
 text = "Options"
 
@@ -72,7 +72,7 @@ text = "Options"
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_fonts/font = ExtResource("2_ljeab")
+theme_override_fonts/font = ExtResource("3_wqsyj")
 theme_override_font_sizes/font_size = 40
 text = "Exit Game"
 
