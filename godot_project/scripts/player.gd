@@ -40,6 +40,7 @@ func _physics_process(delta: float) -> void:
 	
 func increase_score():
 	player_score -= 1
+	
 	update_score_display()
 	if player_score <= 0:
 		on_level_complete()
