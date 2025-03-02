@@ -7,7 +7,7 @@ var player_score = 5
 
 @onready var jump_sound = $JumpSound
 @onready var animated_sprite = $AnimatedSprite2D
-@onready var score_label = $Score
+@onready var score_label = $VBoxContainer/Score
 
 func _ready():
 	score_label.text = "Coins Left: " + str(player_score)

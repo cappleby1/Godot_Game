@@ -44,11 +44,29 @@ layout_mode = 2
 custom_minimum_size = Vector2(5, 5)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_u3ssc")
-theme_override_font_sizes/font_size = 90
+theme_override_font_sizes/font_size = 120
 text = "Level Complete!"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="WinInfo" type="VBoxContainer" parent="Background/MarginContainer/TitleBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Spcer" type="Label" parent="Background/MarginContainer/TitleBox/WinInfo"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 200
+
+[node name="Timer" type="Label" parent="Background/MarginContainer/TitleBox/WinInfo"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.910807, 0.537654, 1, 1)
+theme_override_fonts/font = ExtResource("3_c2lxo")
+theme_override_font_sizes/font_size = 70
+text = "Final Time: "
+vertical_alignment = 1
 
 [node name="ButtonsBox" type="VBoxContainer" parent="Background/MarginContainer/TitleBox"]
 layout_mode = 2
@@ -59,7 +77,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("3_c2lxo")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 70
 text = "Next Level"
 
 [node name="MenuButton" type="Button" parent="Background/MarginContainer/TitleBox/ButtonsBox"]
@@ -67,7 +85,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("3_c2lxo")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 70
 text = "Exit to Menu"
 
 [connection signal="pressed" from="Background/MarginContainer/TitleBox/ButtonsBox/MenuButton" to="." method="_on_menu_button_pressed"]

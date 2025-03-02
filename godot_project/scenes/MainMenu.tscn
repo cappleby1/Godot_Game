@@ -43,10 +43,26 @@ layout_mode = 2
 [node name="Title" type="Label" parent="Background/MarginContainer/TitleBox"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_ydx0k")
-theme_override_font_sizes/font_size = 90
+theme_override_font_sizes/font_size = 120
 text = "Godot Project"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="InfoBox" type="VBoxContainer" parent="Background/MarginContainer/TitleBox"]
+layout_mode = 2
+
+[node name="Spacer" type="Label" parent="Background/MarginContainer/TitleBox/InfoBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+
+[node name="Label" type="Label" parent="Background/MarginContainer/TitleBox/InfoBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_wqsyj")
+theme_override_font_sizes/font_size = 70
+text = "Use the arrow keys to move.
+
+Collect all the coins to complete the level."
 
 [node name="ButtonsBox" type="VBoxContainer" parent="Background/MarginContainer/TitleBox"]
 layout_mode = 2
@@ -57,7 +73,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("3_wqsyj")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 70
 text = "Start Game"
 
 [node name="OptionsButton" type="Button" parent="Background/MarginContainer/TitleBox/ButtonsBox"]
@@ -65,7 +81,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("3_wqsyj")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 70
 text = "Options"
 
 [node name="ExitButton" type="Button" parent="Background/MarginContainer/TitleBox/ButtonsBox"]
@@ -73,7 +89,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("3_wqsyj")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 70
 text = "Exit Game"
 
 [connection signal="pressed" from="Background/MarginContainer/TitleBox/ButtonsBox/StartButton" to="." method="_on_start_button_pressed"]
